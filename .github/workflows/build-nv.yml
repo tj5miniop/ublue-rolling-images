@@ -1,5 +1,5 @@
 ---
-name: Build Custom Image - Nvidia drivers
+name: Build Custom Image - Nvidia
 on:
   pull_request:
     branches:

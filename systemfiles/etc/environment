@@ -1,0 +1,5 @@
+# /etc/environment for ublue-rolling-images
+
+POWERDEVIL_NO_DDCUTIL=1
+KWIN_TRIPLE_BUFFER=0
+mesa_glthread=true 

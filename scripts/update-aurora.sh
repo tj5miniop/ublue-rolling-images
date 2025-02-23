@@ -24,8 +24,17 @@ dnf5 -y copr disable danayer/linux-firmware-git
 
 dnf5 -y clean all
 
+
+#Steam Installation
+#Prepare Steam Dependencies
+dnf5 -y install pipewire 
+
+# Perform a distro-sync (again)
+dnf5 -y update
+dnf5 -y distro-sync --allowerasing
+dnf5 -y upgrade --skip-broken
 #Install Steam - taken from fedora copr repo - cannot be used in tj5-os due to way it's built currently
 dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
  
-dnf5 -y install steam
+sudo dnf install steam --allowerasing -v --skip-broken

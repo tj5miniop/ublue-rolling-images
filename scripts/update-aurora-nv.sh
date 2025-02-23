@@ -24,5 +24,8 @@ dnf5 -y copr disable danayer/linux-firmware-git
 
 dnf5 -y clean all
 
-#Install Steam 
+#Install Steam - taken from fedora copr repo - cannot be used in tj5-os due to way it's built currently
+dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
+ 
 dnf5 -y install steam

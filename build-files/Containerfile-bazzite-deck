@@ -15,9 +15,9 @@ FROM ghcr.io/ublue-os/bazzite-deck:latest
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY scripts/update-bazzite.sh /tmp/update.sh
+#COPY scripts/update-bazzite.sh /tmp/update.sh
 COPY systemfiles/etc/environment /etc/environment
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/update.sh && \
+    #/tmp/update.sh && \
     ostree container commit
     

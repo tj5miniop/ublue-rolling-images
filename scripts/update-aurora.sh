@@ -11,8 +11,8 @@ set -ouex pipefail
 
 # Perform a distro-sync (again)
 dnf5 -y update
-dnf5 -y distro-sync --allowerasing
-dnf5 -y upgrade --skip-broken
+#dnf5 -y distro-sync --allowerasing
+dnf5 -y upgrade
 
 #Update akmods by re-enabling repo temporarily
 dnf5 -y copr enable ublue-os/akmods 

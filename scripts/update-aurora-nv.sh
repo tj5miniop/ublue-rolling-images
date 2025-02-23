@@ -23,3 +23,6 @@ dnf5 -y install linux-firmware
 dnf5 -y copr disable danayer/linux-firmware-git 
 
 dnf5 -y clean all
+
+#Install Steam 
+dnf5 -y install steam

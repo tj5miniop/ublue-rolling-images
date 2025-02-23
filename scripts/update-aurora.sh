@@ -40,4 +40,4 @@ dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
 dnf5 -y update --refresh
 
  #Install Steam Package
-dnf5 -y install steam --allowerasing --skip-broken
+dnf5 -y install steam --allowerasing

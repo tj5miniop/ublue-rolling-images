@@ -33,7 +33,7 @@ dnf5 -y install pipewire
 
 # Perform a distro-sync (update) (again)
 dnf5 -y update
-dnf5 -y upgrade --skip-broken
+dnf5 -y upgrade
 #Install Steam - taken from fedora copr repo - cannot be used in tj5-os due to way it's built currently
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1

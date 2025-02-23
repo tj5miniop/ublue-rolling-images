@@ -18,4 +18,10 @@ dnf5 -y copr enable ublue-os/akmods
 dnf5 -y update --refresh 
 dnf5 -y copr disable ublue-os/akmods
 
+#Add the latest linux firmware!
+dnf5 -y copr enable danayer/linux-firmware-git 
+dnf5 -y install linux-firmware 
+dnf5 -y copr disable danayer/linux-firmware-git 
+
+dnf5 -y clean all
 echo 'done!'

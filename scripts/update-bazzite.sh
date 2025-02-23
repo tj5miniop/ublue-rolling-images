@@ -10,19 +10,16 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 
-#Update akmods by re-enabling repo temporarily
-dnf5 -y copr enable ublue-os/akmods 
-dnf5 -y update --refresh 
-dnf5 -y copr disable ublue-os/akmods
+#Update akmods by re-enabling repo temporarily - not needed for bazzite
+#dnf5 -y copr enable ublue-os/akmods 
+#dnf5 -y update 
+#dnf5 -y copr disable ublue-os/akmods
 
-#Add the latest linux firmware!
-dnf5 -y copr enable danayer/linux-firmware-git 
-dnf5 -y install linux-firmware 
-dnf5 -y copr disable danayer/linux-firmware-git 
+#Add the latest linux firmware! - not needed for bazzite
+#dnf5 -y copr enable danayer/linux-firmware-git 
+#dnf5 -y install linux-firmware 
+#dnf5 -y copr disable danayer/linux-firmware-git 
 
 dnf5 -y clean all
-
-
-#Steam Installation
-#Prepare Steam Dependencies
-dnf5 -y install pipewire 
+dnf5 -y update
+dnf5 -y upgrade

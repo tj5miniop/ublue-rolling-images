@@ -1,4 +1,4 @@
-# Ublue Rolling Images (Tweaked by tj5miniop)
+# Ublue Rolling Images
 
 ## This project would not be possible without Universal Blue. 
 Seriously, all this repo does is build a daily, updated, image of a few of the Universal Blue projects.

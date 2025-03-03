@@ -6,14 +6,17 @@ Seriously, all this repo does is build a daily, updated, image of a few of the U
 #### Currently - 
 
 ### Bazzite (The Steam Deck/AMD HTPC edition) 
-### Aurora (A tweaked fedora Kinoite designed to be as reliable as a chromebook) (NVIDIA & AMD/INTEL Images)
+### Aurora (A tweaked fedora Kinoite designed to be as reliable as a chromebook) (NVIDIA & AMD/INTEL Images) - based on the hwe vairant, which includes the Bazzite Kernel as well as NVIDIA GPU drivers already preconfigured
 
 
 # NOTES 
 
-- ### The nvidia image can only be used on GPUs that use the Turing architecture or later (1600 series GPUs and above)
-- ### These images are tweaked (mostly) to my liking. in this repo, tweaks are kept minimal and simple to ensure nothing game-breaking will occur.
-- ### These images are considered development images, meaning that new changes will be tested here. DO NOT DAILY DRIVE THESE IF YOU DON'T WANT THE LATEST AND GREATEST. Another project I have made (https://github.com/tj5miniop/tj5-os) uses these images as a base, but will not include any of these experimental changes unless they are consideered stable. Use these instead if you prefer a more stable experience.
+- ## The nvidia image can only be used on GPUs that use the Turing architecture or later (1600 series GPUs and above) due to their reliance on the open variant of the Open Kernel Modules from NVIDIA.
+
+
+- ## These images are tweaked (mostly) to my liking. in this repo, tweaks are kept minimal and simple to ensure nothing game-breaking will occur.
+
+- TJ5-OS's repo has been removed as all I really did was use a script on there to install flatpaks. Image building is much quicker on here so I may as well use this repo as the main on instead 
 
 
 

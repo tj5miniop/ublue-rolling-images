@@ -1,5 +1,17 @@
 # Ublue Rolling Images
 
+# To do 
+
+- massive update incoming for all non-nvidia images. This will include the latest mesa drivers.
+
+- download latest Bazzite Kernels make a version pin system, this will enhance system stability.
+
+- disable ssh. SSH is highly beneficial and leaving it on is a big security issue.
+
+- Bazzite - integrate protondb as a web app and include a DLSS swapper script. 
+
+
+
 ## This project would not be possible without Universal Blue. 
 Seriously, all this repo does is build a daily, updated, image of a few of the Universal Blue projects.
 

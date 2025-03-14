@@ -11,12 +11,12 @@ Seriously, all this repo does is build a daily, updated, image of a few of the U
 
 # NOTES 
 
-- ## The nvidia image can only be used on GPUs that use the Turing architecture or later (1600 series GPUs and above) due to their reliance on the open variant of the Open Kernel Modules from NVIDIA.
+- The nvidia image can only be used on GPUs that use the Turing architecture or later (1600 series GPUs and above) due to their reliance on the open variant of the Open Kernel Modules from NVIDIA.
 
 
-- ## These images are tweaked (mostly) to my liking. in this repo, tweaks are kept minimal and simple to ensure nothing game-breaking will occur.
+- These images are tweaked (mostly) to my liking. in this repo, tweaks are kept minimal and simple to ensure nothing game-breaking will occur.
 
-- TJ5-OS's repo has been removed as all I really did was use a script on there to install flatpaks. Image building is much quicker on here so I may as well use this repo as the main on instead 
+- TJ5-OS's repo has been removed as all I really did was use a script on there to install flatpaks. Image building is much quicker on here so I may as well use this repo instead. 
 
 
 

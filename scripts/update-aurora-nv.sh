@@ -31,6 +31,11 @@ dnf5 -y clean all
 #Prepare Steam Dependencies
 dnf5 -y install pipewire 
 
+#Install Terra Repository
+dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+dnf -y update --refresh
+
+
 # Perform a distro-sync (update) (again)
 dnf5 -y update
 dnf5 -y upgrade 

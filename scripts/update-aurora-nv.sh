@@ -32,8 +32,8 @@ dnf5 -y clean all
 dnf5 -y install pipewire 
 
 #Install Terra Repository
-dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-dnf -y update --refresh
+#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+#dnf -y update --refresh
 
 
 # Perform a distro-sync (update) (again)

@@ -1,6 +1,6 @@
 #AURORA HWE BUILD (NON_NVIDIA)
 
-FROM ghcr.io/ublue-os/aurora-hwe-nvidia-open:latest
+FROM ghcr.io/ublue-os/bluefin-hwe-nvidia-open:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable

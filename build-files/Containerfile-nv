@@ -1,4 +1,4 @@
-#Bluefin HWE BUILD (NON_NVIDIA)
+#Bluefin HWE BUILD (NVIDIA)
 
 FROM ghcr.io/ublue-os/bluefin-hwe-nvidia-open:latest
 

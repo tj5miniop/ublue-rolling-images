@@ -26,10 +26,6 @@ dnf5 -y copr disable danayer/linux-firmware-git
 
 dnf5 -y clean all
 
-#Install Mutter Performance Tweaks
-dnf5 -y copr enable execat/mutter-performance
-dnf5 -y reinstall mutter --repo copr:copr.fedorainfracloud.org:execat:mutter-performance
-
 #Install Librewolf Browser
 dnf5 -y remove firefox
 dnf5 -y install dnf-plugins-core

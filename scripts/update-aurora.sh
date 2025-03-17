@@ -32,9 +32,7 @@ dnf5 -y reinstall mutter --repo copr:copr.fedorainfracloud.org:execat:mutter-per
 
 #Install Librewolf Browser
 dnf5 -y remove firefox
-dnf5 -y install dnf-plugins-core
-curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
-dnf5 -y install librewolf
+
 #Steam Installation
 #Prepare Steam Dependencies
 dnf5 -y install pipewire 

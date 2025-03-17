@@ -22,31 +22,34 @@ dnf5 -y copr disable ublue-os/akmods
 #Add the latest linux firmware!
 dnf5 -y copr enable danayer/linux-firmware-git 
 dnf5 -y install linux-firmware 
-dnf5 -y copr disable danayer/linux-firmware-git 
+dnf5 -y copr disable danayer/linux-firmware-git
 
 dnf5 -y clean all
 
+#Install Mutter Performance Tweaks
+dnf5 -y copr enable execat/mutter-performance
+dnf5 -y reinstall mutter --repo copr:copr.fedorainfracloud.org:execat:mutter-performance
+
+#Install Brave Browser
+dnf5 -y remove firefox
+dnf5 -y install dnf-plugins-core
+dnf5 -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+dnf5 -y install brave-browser
 
 #Steam Installation
 #Prepare Steam Dependencies
 dnf5 -y install pipewire 
 
-#Install Terra Repository
-#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-#dnf -y update --refresh
-
-
 # Perform a distro-sync (update) (again)
 dnf5 -y update
-dnf5 -y upgrade
-#re-enable RPM Fusion - Steam is currently disabled as I need to fix a few errors. Flatpak Steam will suffice for now 
+dnf5 -y upgrade 
+#Install Steam - taken from fedora copr repo - cannot be used in tj5-os due to way it's built currently
 dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
 dnf5 -y update --refresh
 
-#Install Steam Package
+ #Install Steam Package
 dnf5 -y install steam --allowerasing
-
 
 # enable mesa-git copr repo
 dnf5 -y copr enable xxmitsu/mesa-git

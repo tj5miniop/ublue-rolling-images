@@ -1,4 +1,4 @@
-#AURORA HWE BUILD (NON_NVIDIA)
+#Bluefin HWE BUILD (NON_NVIDIA)
 
 FROM ghcr.io/ublue-os/bluefin-hwe-nvidia-open:latest
 

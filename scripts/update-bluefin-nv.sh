@@ -30,16 +30,15 @@ dnf5 -y clean all
 dnf5 -y copr enable execat/mutter-performance
 dnf5 -y reinstall mutter --repo copr:copr.fedorainfracloud.org:execat:mutter-performance
 
-
+#Install Brave Browser
+dnf5 -y remove firefox
+dnf5 -y install dnf-plugins-core
+dnf5 -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+dnf5 -y install brave-browser
 
 #Steam Installation
 #Prepare Steam Dependencies
 dnf5 -y install pipewire 
-
-#Install Terra Repository
-#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-#dnf -y update --refresh
-
 
 # Perform a distro-sync (update) (again)
 dnf5 -y update

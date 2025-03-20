@@ -45,6 +45,11 @@ dnf5 -y clean all
 dnf5 -y remove firefox
 dnf5 -y install dnf-plugins-core
 
+# Install Zen Browser
+dnf5 -y copr enable sneexy/zen-browser
+dnf5 -y install zen-browser
+dnf5 -y copr disable sneexy/zen-browser
+
 #Steam Installation
 #Prepare Steam Dependencies
 dnf5 -y install pipewire 
@@ -64,10 +69,8 @@ dnf5 -y install steam --allowerasing
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
 dnf5 -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
-dnf5 -y install uksmd cachyos-settings --allowerasing
+dnf5 -y install cachyos-settings --allowerasing
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 dnf5 -y clean all
-
-systemctl enable uksmd.service
 
 

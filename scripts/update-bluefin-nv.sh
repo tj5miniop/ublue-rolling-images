@@ -24,9 +24,14 @@ dnf5 -y copr enable danayer/linux-firmware-git
 dnf5 -y install linux-firmware 
 dnf5 -y copr disable danayer/linux-firmware-git
 
+#Re-enable ASUS linux COPR repo
+dnf5 -y copr enable lukenukem/asus-linux
+dnf5 -y update && dnf5 -y upgrade
+dnf5 -y copr enable lukenukem/asus-linux
 dnf5 -y clean all
 
-#Install Librewolf Browser
+
+#Remove Firefox
 dnf5 -y remove firefox
 dnf5 -y install dnf-plugins-core
 
@@ -53,6 +58,6 @@ dnf5 -y install uksmd cachyos-settings cachyos-ananicy-rules ananicy-cpp --allow
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 dnf5 -y clean all
 
-sudo systemctl enable uksmd.service
+systemctl enable uksmd.service
 
 

@@ -45,11 +45,6 @@ dnf5 -y clean all
 dnf5 -y remove firefox
 dnf5 -y install dnf-plugins-core
 
-# Install Zen Browser
-dnf5 -y copr enable sneexy/zen-browser
-dnf5 -y install zen-browser
-dnf5 -y copr disable sneexy/zen-browser
-
 #Steam Installation
 #Prepare Steam Dependencies
 dnf5 -y install pipewire 

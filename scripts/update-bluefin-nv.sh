@@ -44,3 +44,15 @@ dnf5 -y update --refresh
 
  #Install Steam Package
 dnf5 -y install steam --allowerasing
+
+#Enable CachyOS optimisations
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
+dnf5 -y update
+dnf5 -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
+dnf5 -y install uksmd cachyos-settings cachyos-ananicy-rules ananicy-cpp --allowerasing
+dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
+dnf5 -y clean all
+
+sudo systemctl enable uksmd.service
+
+

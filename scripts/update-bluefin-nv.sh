@@ -14,6 +14,16 @@ dnf5 -y update
 #dnf5 -y distro-sync --allowerasing
 dnf5 -y upgrade
 
+# Enable Podman and Distrobox (making sure they're updated)
+dnf5 -y install podman distrobox git
+
+# install kora icon theme 
+cd /tmp
+git clone https://github.com/bikass/kora.git
+cd kora
+cp -r kora /usr/share/icons
+
+
 #Update akmods by re-enabling repo temporarily
 dnf5 -y copr enable ublue-os/akmods 
 dnf5 -y update --refresh 
@@ -54,7 +64,7 @@ dnf5 -y install steam --allowerasing
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
 dnf5 -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel
-dnf5 -y install uksmd cachyos-settings cachyos-ananicy-rules ananicy-cpp --allowerasing
+dnf5 -y install uksmd cachyos-settings --allowerasing
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 dnf5 -y clean all
 

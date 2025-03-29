@@ -11,14 +11,14 @@ set -ouex pipefail
 
 
 #Update akmods by re-enabling repo temporarily - not needed for bazzite
-#dnf5 -y copr enable ublue-os/akmods 
-#dnf5 -y update 
-#dnf5 -y copr disable ublue-os/akmods
+dnf5 -y copr enable ublue-os/akmods 
+dnf5 -y update 
+dnf5 -y copr disable ublue-os/akmods
 
 #Add the latest linux firmware! - not needed for bazzite
-#dnf5 -y copr enable danayer/linux-firmware-git 
-#dnf5 -y install linux-firmware 
-#dnf5 -y copr disable danayer/linux-firmware-git 
+dnf5 -y copr enable danayer/linux-firmware-git 
+dnf5 -y install linux-firmware 
+dnf5 -y copr disable danayer/linux-firmware-git 
 
 dnf5 -y clean all
 dnf5 -y update
@@ -29,3 +29,10 @@ dnf5 -y copr enable xxmitsu/mesa-git
 dnf5 -y update 
 dnf5 -y upgrade 
 dnf5 -y copr disable xxmitsu/mesa-git
+
+
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
+dnf5 -y update
+dnf5 -y upgrade
+dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-settings --allowerasing
+dnf5 -y copr disable bieszczaders/kernel-cachyos-addons

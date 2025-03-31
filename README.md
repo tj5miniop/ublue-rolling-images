@@ -15,7 +15,9 @@ Seriously, all this repo does is build a daily, updated, image of a few of the U
 #### Currently - 
 
 ### Bazzite (The Steam Deck/AMD HTPC edition) 
-### Aurora (A tweaked fedora Kinoite designed to be as reliable as a chromebook) (NVIDIA & AMD/INTEL Images) - based on the hwe vairant, which includes the Bazzite Kernel as well as NVIDIA GPU drivers already preconfigured. this custom variant of Aurora will contain optimisations from CachyOS and Bazzite while still aiming to be as lean as possible
+### Aurora (A tweaked fedora Kinoite designed to be as reliable as a chromebook) (NVIDIA) - based on the hwe vairant, which includes the Bazzite Kernel as well as NVIDIA GPU drivers already preconfigured. this custom variant of Aurora will contain optimisations from CachyOS and Bazzite while still aiming to be as lean as possible
+
+### BLUEFIN - AMD GPU VARIANT OF THE AURORA IMAGES -  based on the hwe vairant, which includes the Bazzite Kernel. this custom variant of Bluefin will contain optimisations from CachyOS and Bazzite while still aiming to be as lean as possible
 
 
 # NOTES 

@@ -2,7 +2,7 @@
 
 # To do 
 
-- massive update incoming for all non-nvidia images. This will include the latest mesa drivers.
+- massive update incoming for all non-nvidia images. Add extra packages, build custom kernel?
 
 - disable ssh. SSH is highly beneficial and leaving it on is a big security issue.
 

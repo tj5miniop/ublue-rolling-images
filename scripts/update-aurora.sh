@@ -35,7 +35,7 @@ dnf5 -y remove firefox
 
 #Steam Installation
 #Prepare Steam Dependencies
-dnf5 -y install pipewire 
+dnf5 -y install pipewire sassc 
 
 # Perform a distro-sync (update) (again)
 dnf5 -y update

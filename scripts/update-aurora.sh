@@ -24,6 +24,11 @@ dnf5 -y copr enable danayer/linux-firmware-git
 dnf5 -y install linux-firmware 
 dnf5 -y copr disable danayer/linux-firmware-git
 
+# Install additional Firmware Tweaks - ACER 
+dnf5 -y install akmods mokutil 
+dnf5 -y copr enable asan/acer-modules
+dnf5 -y install acer-wmi-battery akmod-acer-wmi-battery kmod-acer-wmi-battery 
+
 dnf5 -y clean all
 
 #Install Mutter Performance Tweaks
@@ -54,9 +59,17 @@ dnf5 -y update
 dnf5 -y upgrade 
 dnf5 -y copr disable xxmitsu/mesa-git
 
-#Install CachyOS
+#Install CachyOS Optimizations 
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
 dnf5 -y upgrade
 dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-settings --allowerasing --skip-unavailable
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
+
+#Enable lact 
+sudo dnf copr enable ilyaz/LACT
+dnf5 -y install lact
+# Note - SYSTEMD Unit will have to be enable MANUALLY
+dnf5 -y copr disable ilyaz/LACT
+
+dnf5 -y clean all

@@ -67,9 +67,11 @@ dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-sett
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
 #Enable lact 
-sudo dnf copr enable ilyaz/LACT
+dnf5 -y copr enable ilyaz/LACT
 dnf5 -y install lact
 # Note - SYSTEMD Unit will have to be enable MANUALLY
 dnf5 -y copr disable ilyaz/LACT
 
 dnf5 -y clean all
+
+dnf5 -y install edk2-ovmf qemu virt-manager

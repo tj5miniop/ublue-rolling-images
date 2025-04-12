@@ -2,12 +2,13 @@
 
 # To do 
 
-- massive update incoming for all non-nvidia images. Add extra packages, build custom kernel?
-
 - disable ssh. SSH is highly beneficial and leaving it on is a big security issue.
 
-- Bazzite - integrate protondb as a web app and include a DLSS swapper script. 
+- Bazzite - integrate protondb as a web app (sorta) and include a DLSS swapper script. 
 
+- Add Extra 'ujust' scripts
+
+- Bluefin - Add virtualisation packages for QEMU
 
 ## This project would not be possible without Universal Blue. 
 Seriously, all this repo does is build a daily, updated, image of a few of the Universal Blue projects.

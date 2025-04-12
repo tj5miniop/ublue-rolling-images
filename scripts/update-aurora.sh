@@ -75,3 +75,7 @@ dnf5 -y copr disable ilyaz/LACT
 dnf5 -y clean all
 
 dnf5 -y install edk2-ovmf qemu virt-manager
+systemctl enable libvirtd
+
+#Regenerate Kernel Modules 
+dracut --regenerate-all --force

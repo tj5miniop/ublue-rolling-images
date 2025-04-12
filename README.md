@@ -10,10 +10,12 @@
 
 - Bluefin - Add virtualisation packages for QEMU
 
+- 'Main Images' - Build base images?
+
 ## This project would not be possible without Universal Blue. 
 Seriously, all this repo does is build a daily, updated, image of a few of the Universal Blue projects.
 
-#### Currently - 
+#### Currently building- 
 
 ### Bazzite (The Steam Deck/AMD HTPC edition) 
 ### Aurora (A tweaked fedora Kinoite designed to be as reliable as a chromebook) (NVIDIA) - based on the hwe vairant, which includes the Bazzite Kernel as well as NVIDIA GPU drivers already preconfigured. this custom variant of Aurora will contain optimisations from CachyOS and Bazzite while still aiming to be as lean as possible
@@ -28,10 +30,6 @@ Seriously, all this repo does is build a daily, updated, image of a few of the U
 
 - These images are tweaked (mostly) to my liking. in this repo, tweaks are kept minimal and simple to ensure nothing game-breaking will occur.
 
-- TJ5-OS's repo has been removed as all I really did was use a script on there to install flatpaks. Image building is much quicker on here so I may as well use this repo instead. 
-
-
-
 # Credits
 
 - Universal Blue (https://universal-blue.org/) - for creating such an amazing project.
@@ -42,7 +40,7 @@ Seriously, all this repo does is build a daily, updated, image of a few of the U
 # Contributing 
 #### - make sure to read the notes (above) and take them into account.
 - Fork this repo to add your own changes.
-#### - (Reccomended if you are making a big change, small changes should be ok) If you want to build/test your fork, you will have to sign the images with cosign. This can be done (with cosign installed, just use your distro's package manager or something like brew) by running;
+#### - (Reccomended if you are making a big change, small changes should be ok) If you want to build/test your fork, you will have to sign the images with cosign. This can be done (with cosign installed, just use your distro's package manager or something like brew/nix will also provide) by running;
 
 ```bash
 cosign generate-key-pair

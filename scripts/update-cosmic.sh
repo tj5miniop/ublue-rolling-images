@@ -56,7 +56,7 @@ dnf5 -y copr disable xxmitsu/mesa-git
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y update
 dnf5 -y upgrade
-dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-settings --allowerasing --skip-unavailable
+dnf5 -y install uksmd bore-sysctl cachyos-settings --allowerasing --skip-unavailable
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
 dnf5 -y clean all

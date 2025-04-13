@@ -63,7 +63,3 @@ dnf5 -y clean all
 
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force
-
-# Update to Fedora 42
-dnf5 -y upgrade --refresh
-dnf5 system-upgrade download --releasever=42

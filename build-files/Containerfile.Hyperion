@@ -9,7 +9,7 @@ FROM ghcr.io/tj5miniop/ublue-rolling-images-cosmic:41
 
 # Copy files from directories
 # EXAMPLE - copies update-aurora.sh from the scripts directory and places it into the /tmp directory to be referenced later
-COPY scripts/update-aurora.sh /tmp/update.sh
+COPY scripts/hyperion-setup.sh /tmp/update.sh
 
 #Build Container image 
 RUN mkdir -p /var/lib/alternatives && \

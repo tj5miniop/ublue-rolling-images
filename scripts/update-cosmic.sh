@@ -46,7 +46,7 @@ dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
 dnf5 -y update --refresh
 
 
-# enable mesa-git copr repo
+# enable mesa-git copr repo - NOTE - will be included in NVIDIA Images - 
 dnf5 -y copr enable xxmitsu/mesa-git
 dnf5 -y update 
 dnf5 -y upgrade 
@@ -59,16 +59,7 @@ dnf5 -y upgrade
 dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-settings --allowerasing --skip-unavailable
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
-#Enable lact 
-dnf5 -y copr enable ilyaz/LACT
-dnf5 -y install lact
-# Note - SYSTEMD Unit will have to be enable MANUALLY
-dnf5 -y copr disable ilyaz/LACT
-
 dnf5 -y clean all
-
-dnf5 -y install edk2-ovmf qemu virt-manager
-systemctl enable libvirtd
 
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force

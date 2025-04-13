@@ -1,7 +1,7 @@
 # Template Containerfile for building new images
 
-# Enter base image name here - Replace ublue-os if base image is from a different user
-FROM ghcr.io/ublue-os/cosmic
+# Use Fedora 41 as the base image for Hyperion
+FROM ghcr.io/tj5miniop/ublue-rolling-images-cosmic:41 
 
 ### MODIFICATIONS
 ## Make the desired modifications to create a 'tweaked base image' 
@@ -9,7 +9,7 @@ FROM ghcr.io/ublue-os/cosmic
 
 # Copy files from directories
 # EXAMPLE - copies update-aurora.sh from the scripts directory and places it into the /tmp directory to be referenced later
-COPY scripts/update-cosmic.sh /tmp/update.sh
+COPY scripts/hyperion-setup.sh /tmp/update.sh
 
 #Build Container image 
 RUN mkdir -p /var/lib/alternatives && \

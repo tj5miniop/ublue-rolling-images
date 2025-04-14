@@ -1,7 +1,7 @@
 # Template Containerfile for building new images
 
 # Use Fedora 41 as the base image for Hyperion
-FROM ghcr.io/tj5miniop/ublue-rolling-images-cosmic-base:41 
+FROM ghcr.io/tj5miniop/ublue-rolling-images-cosmic-base
 
 ### MODIFICATIONS
 ## Make the desired modifications to create a 'tweaked base image' 

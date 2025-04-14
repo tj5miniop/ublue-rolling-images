@@ -52,4 +52,7 @@ systemctl disable sddm
 
 dnf5 -y copr enable ryanabx/cosmic-epoch 
 dnf5 -y install cosmic-desktop
+dnf5 -y install cosmic-greeter
 dnf5 -y copr disable ryanabx/cosmic-epoch 
+
+dfn5 -y cleanall

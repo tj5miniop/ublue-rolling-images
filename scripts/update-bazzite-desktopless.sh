@@ -37,7 +37,7 @@ dnf5 -y upgrade
 dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-settings --allowerasing
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
-dnf5 -y remove @kde-desktop sddm --allowerasing
+dnf5 -y remove @kde-desktop sddm plasma-desktop plasma-workspace --allowerasing
 dnf5 -y remove cockpit qemu libvirt --allowerasing
 dnf5 -y clean all
 

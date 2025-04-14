@@ -15,9 +15,6 @@ dnf5 -y copr enable danayer/linux-firmware-git
 dnf5 -y install linux-firmware 
 dnf5 -y copr disable danayer/linux-firmware-git
 
-# Install terra repository
-dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-
 #Install CachyOS Kernel
 echo 'Installing CachyOS kernel'
 dnf5 -y copr enable bieszczaders/kernel-cachyos

@@ -1,0 +1,18 @@
+# Template Containerfile for building new images
+
+# Use Fedora 41 as the base image for Hyperion
+FROM ghcr.io/tj5miniop/ublue-rolling-images-cosmic-base
+
+### MODIFICATIONS
+## Make the desired modifications to create a 'tweaked base image' 
+#As this repo is meant for creating 'base' images for projects, try to keep things minimal and similar to others
+
+# Copy files from directories
+# EXAMPLE - copies update-aurora.sh from the scripts directory and places it into the /tmp directory to be referenced later
+COPY scripts/hyperion-setup.sh /tmp/update.sh
+
+#Build Container image 
+RUN mkdir -p /var/lib/alternatives && \
+    /tmp/update.sh && \
+    ostree container commit
+    

@@ -37,13 +37,6 @@ dnf5 -y upgrade
 dnf5 -y install uksmd bore-sysctl ananicy-cpp cachyos-ananicy-rules cachyos-settings --allowerasing
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
-
-#Install Gaming RPMs (Will soon be migrated into a script) (Bottles will be kept as a flatpak)
-cd /tmp
-https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.16.1/Heroic-2.16.1-linux-x86_64.rpm -O heroic.rpm
-dnf 5 -y install heroic.rpm 
-
-
 dnf5 -y remove @kde-desktop sddm --allowerasing
 dnf5 -y remove cockpit qemu libvirt --allowerasing
 dnf5 -y clean all
@@ -55,4 +48,7 @@ dnf5 -y install cosmic-desktop
 dnf5 -y install cosmic-greeter
 dnf5 -y copr disable ryanabx/cosmic-epoch 
 
-dfn5 -y cleanall
+#Extra cleanup
+dnf5 -y remove plasma-discover fcitx dolphin ptyxis kwallet plasma-firewall kcalc ark kate
+dnf5 -y autoremove
+dnf5 -y clean all

@@ -9,10 +9,24 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+#Install Kernel-Blu (rpm-ostree way incase this doesn't work)
+dnf5 -y copr enable sentry/kernel-blu
+dnf5 -y upgrade --refresh 
+dnf5 -y swap kernel kernel --repo copr:copr.fedorainfracloud.org:sentry:kernel-blu --assumeyes
+dnf5 -y copr disable sentry/kernel-blu
+
+#Regenerate Kernel Modules 
+dracut --regenerate-all --force
+
 # Perform a distro-sync (again)
 dnf5 -y update
 #dnf5 -y distro-sync --allowerasing
 dnf5 -y upgrade
+
+#install COSMIC Desktop environment
+dnf5 -y copr enable ryanabx/cosmic-epoch
+dnf5 -y install cosmic-desktop cosmic-greeter
+dnf5 -y copr disable ryanabx/cosmic-epoch
 
 #Update akmods by re-enabling repo temporarily
 dnf5 -y copr enable ublue-os/akmods 
@@ -26,14 +40,6 @@ dnf5 -y copr disable danayer/linux-firmware-git
 
 dnf5 -y clean all
 
-#Install Mutter Performance Tweaks
-#dnf5 -y copr enable execat/mutter-performance
-#dnf5 -y reinstall mutter --repo copr:copr.fedorainfracloud.org:execat:mutter-performance
-
-#Install Librewolf Browser
-dnf5 -y remove firefox
-
-#Steam Installation
 #Prepare Steam Dependencies
 dnf5 -y install pipewire sassc 
 
@@ -60,6 +66,7 @@ dnf5 -y install uksmd bore-sysctl cachyos-settings --allowerasing --skip-unavail
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
 dnf5 -y clean all
+
 
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force

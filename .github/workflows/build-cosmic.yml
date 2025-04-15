@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: "${{ github.event.repository.name }}-cosmic-base"  # the name of the image produced by this build, matches repo names
-  IMAGE_DESC: "(NON_NVIDIA) Build of Fedora with the Cosmic Desktop Environment"
+  IMAGE_NAME: "base-cosmic-atomic"  # the name of the image produced by this build, matches repo names
+  IMAGE_DESC: "Tweaked Variant of Fedora COSMIC Atomic, with an optimised kernel and other base tweaks."
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
   ARTIFACTHUB_LOGO_URL: "https://raw.githubusercontent.com/tj5miniop/ublue-rolling-images/refs/heads/main/repofiles/images/Cosmic.png"  # You should put your own image here so that you get a fancy profile image on https://artifacthub.io/!
 

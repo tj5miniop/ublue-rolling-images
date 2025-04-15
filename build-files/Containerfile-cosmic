@@ -1,7 +1,7 @@
 # Template Containerfile for building new images
 
 # Enter base image name here - Replace ublue-os if base image is from a different user
-FROM ghcr.io/ublue-os/cosmic:41
+FROM ghcr.io/ublue-os/base-main
 
 ### MODIFICATIONS
 ## Make the desired modifications to create a 'tweaked base image' 

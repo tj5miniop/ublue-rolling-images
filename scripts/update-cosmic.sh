@@ -21,6 +21,8 @@ dnf5 -y copr disable sentry/kernel-blu
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop sddm NetworkManager
+dnf5 -y remove cosmic-greeter
+systemctl disable cosmic-greeter
 dnf5 -y copr disable ryanabx/cosmic-epoch
 
 #Update akmods by re-enabling repo temporarily

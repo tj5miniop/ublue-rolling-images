@@ -8,16 +8,15 @@ set -ouex pipefail
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
-dnf5 -y remove kernel 
+ 
 dnf5 -y autoremove
 # enable Kernel CachyOS repository
-dnf5 -y copr enable bieszczaders/kernel-cachyos
-rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos kernel-cachyos kernel-cachyos-headers
-dnf5 -y copr disable bieszczaders/kernel-cachyos
+dnf5 -y copr enable sentry/kernel-blu
+rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu kernel kernel-headers
+dnf5 -y copr disable sentry/kernel-blu
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
-dnf5 -y install cosmic-desktop cosmic-greeter
+dnf5 -y install cosmic-desktop sddm NetworkManager
 dnf5 -y copr disable ryanabx/cosmic-epoch
 
 #Update akmods by re-enabling repo temporarily
@@ -57,4 +56,4 @@ dnf5 -y clean all
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force
 
-systemctl enable cosmic-greeter
+systemctl enable sddm

@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
  
 dnf5 -y autoremove
-dnf5 -y remove kernel* --allowerasing
+dnf5 -y remove kernel* 
 # enable Kernel CachyOS repository
 dnf5 -y copr enable sentry/kernel-blu
 rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu kernel kernel-headers

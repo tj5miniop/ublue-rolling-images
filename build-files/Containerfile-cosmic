@@ -14,5 +14,6 @@ COPY scripts/update-cosmic.sh /tmp/update.sh
 #Build Container image 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/update.sh && \
+    rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blue kernel kernel-headers && \
     ostree container commit
     

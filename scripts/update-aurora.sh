@@ -74,8 +74,14 @@ dnf5 -y copr disable ilyaz/LACT
 
 dnf5 -y clean all
 
-dnf5 -y install edk2-ovmf qemu virt-manager
-systemctl enable libvirtd
+# install kora icon theme 
+cd /tmp
+git clone https://github.com/bikass/kora.git
+cd kora
+cp -r kora /usr/share/icons
+cd ../ 
+rm -rf kora
+
 
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force

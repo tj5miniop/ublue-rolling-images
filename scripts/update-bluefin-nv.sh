@@ -22,7 +22,8 @@ cd /tmp
 git clone https://github.com/bikass/kora.git
 cd kora
 cp -r kora /usr/share/icons
-
+cd ../ 
+rm -rf kora
 
 #Update akmods by re-enabling repo temporarily
 dnf5 -y copr enable ublue-os/akmods 

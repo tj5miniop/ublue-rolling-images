@@ -12,7 +12,8 @@ set -ouex pipefail
 #Install Kernel-Blu (rpm-ostree way incase this doesn't work)
 dnf5 -y copr enable sentry/kernel-blu
 dnf5 -y upgrade --refresh 
-dnf5 -y swap kernel kernel --repo copr:copr.fedorainfracloud.org:sentry:kernel-blu --assumeyes
+dnf5 -y remove kernel
+dnf5 -y install kernel --repo copr:copr.fedorainfracloud.org:sentry:kernel-blu --assumeyes --allowerasing
 dnf5 -y copr disable sentry/kernel-blu
 
 #Regenerate Kernel Modules 
@@ -70,3 +71,5 @@ dnf5 -y clean all
 
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force
+
+systemctl enable cosmic-greeter

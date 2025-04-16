@@ -13,8 +13,7 @@ set -ouex pipefail
 rm -rf /usr/lib/systemd/system/cosmic-greeter.service
 
 dnf5 -y autoremove
-dnf5 -y copr enable gloriouseggroll/nobara
-dnf5 -y install kernel --repo copr:copr.fedorainfracloud.org:gloriouseggroll:nobara-41
+
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop sddm NetworkManager

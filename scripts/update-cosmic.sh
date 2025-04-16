@@ -9,11 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-
-#RUNONCE
-systemctl disable cosmic-greeter
-dnf5 -y remove cosmic-greeter
-
+#Remove any remnants
+rm -rf /usr/lib/systemd/system/cosmic-greeter.service
 
 dnf5 -y autoremove
 dnf5 -y remove kernel* 

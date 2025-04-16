@@ -12,11 +12,6 @@ set -ouex pipefail
 # enable Kernel Blue repository
 dnf5 -y copr enable sentry/kernel-blu
 
-# Perform a distro-sync (again)
-dnf5 -y update
-#dnf5 -y distro-sync --allowerasing
-dnf5 -y upgrade
-
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop cosmic-greeter
@@ -36,14 +31,10 @@ dnf5 -y clean all
 
 #Prepare Steam Dependencies
 dnf5 -y install pipewire sassc 
-
-# Perform a distro-sync (update) (again)
-dnf5 -y update
-dnf5 -y upgrade 
+ 
 #Install Dependencies for apps such as steam - Enable Multimedia codes
 dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y config-manager setopt fedora-cisco-openh264.enabled=1
-dnf5 -y update --refresh
 
 
 # enable mesa-git copr repo - NOTE - will be included in NVIDIA Images - 
@@ -54,8 +45,6 @@ dnf5 -y copr disable xxmitsu/mesa-git
 
 #Install CachyOS Optimizations 
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
-dnf5 -y update
-dnf5 -y upgrade
 dnf5 -y install uksmd bore-sysctl cachyos-settings --allowerasing --skip-unavailable
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 

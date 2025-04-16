@@ -9,10 +9,10 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# enable Kernel Blue repository
-dnf5 -y copr enable sentry/kernel-blu
-rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu kernel kernel-headers
-dnf5 -y copr disable sentry/kernel-blu
+# enable Kernel CachyOS repository
+dnf5 -y copr enable bieszczaders/kernel-cachyos
+rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos kernel-cachyos kernel-cachyos-headers
+dnf5 -y copr disable bieszczaders/kernel-cachyos
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop cosmic-greeter

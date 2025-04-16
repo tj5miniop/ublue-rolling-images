@@ -11,7 +11,8 @@ set -ouex pipefail
 
 # enable Kernel Blue repository
 dnf5 -y copr enable sentry/kernel-blu
-
+rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu kernel kernel-headers
+dnf5 -y copr disable sentry/kernel-blu
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop cosmic-greeter

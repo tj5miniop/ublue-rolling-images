@@ -13,11 +13,8 @@ set -ouex pipefail
 rm -rf /usr/lib/systemd/system/cosmic-greeter.service
 
 dnf5 -y autoremove
-dnf5 -y remove kernel* 
-# enable Kernel CachyOS repository
-dnf5 -y copr enable sentry/kernel-blu
-rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:sentry:kernel-blu kernel kernel-headers
-dnf5 -y copr disable sentry/kernel-blu
+dnf5 -y copr enable gloriouseggroll/nobara
+dnf5 -y install kernel --repo copr:copr.fedorainfracloud.org:gloriouseggroll:nobara-41
 #install COSMIC Desktop environment
 dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop sddm NetworkManager

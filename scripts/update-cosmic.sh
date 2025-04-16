@@ -8,7 +8,13 @@ set -ouex pipefail
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
- 
+
+
+#RUNONCE
+systemctl disable cosmic-greeter
+dnf5 -y remove cosmic-greeter
+
+
 dnf5 -y autoremove
 dnf5 -y remove kernel* 
 # enable Kernel CachyOS repository

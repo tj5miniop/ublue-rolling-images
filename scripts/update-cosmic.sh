@@ -9,13 +9,20 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-#Install Kernel-Blu (rpm-ostree way incase this doesn't work)
-dnf5 -y copr enable sentry/kernel-blu
-dnf5 -y upgrade --refresh 
-dnf5 -y remove kernel
-dnf5 -y install kernel --repo copr:copr.fedorainfracloud.org:sentry:kernel-blu --assumeyes --allowerasing
-dnf5 -y copr disable sentry/kernel-blu
+#Install Kernel-Blu (rpm-ostree way incase this doesn't work) - the OLD way
+#dnf5 -y copr enable sentry/kernel-blu
+#dnf5 -y upgrade --refresh 
+#dnf5 -y remove kernel
+#dnf5 -y autoremove
+#dnf5 -y install kernel --repo copr:copr.fedorainfracloud.org:sentry:kernel-blu --assumeyes --allowerasing
+#dnf5 -y upgrade --refresh 
+#dnf5 -y copr disable sentry/kernel-blu
+dnf5 -y upgrade --refresh
 
+dnf5 -y copr enable sentry/kernel-blu
+dnf5 -y downgrade --copr kernel kernel-headers
+dnf5 -y autoremove
+dnf5 -y copr disable sentry/kernel-blu
 #Regenerate Kernel Modules 
 dracut --regenerate-all --force
 

@@ -9,6 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+dnf5 -y remove kernel 
+dnf5 -y autoremove
 # enable Kernel CachyOS repository
 dnf5 -y copr enable bieszczaders/kernel-cachyos
 rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos kernel-cachyos kernel-cachyos-headers

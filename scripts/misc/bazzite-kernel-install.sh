@@ -26,7 +26,7 @@ ls -al
 echo 'installing kernel'
 
 #dnf5 -y install *.rpm --allowerasing
-rpm-ostree replace *.rpm
+sudo rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel*.rpm
 grub2-mkconfig -o /boot/grub/grub.cfg
 echo 'Done!'
 

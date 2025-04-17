@@ -10,7 +10,7 @@ FROM ghcr.io/ublue-os/base-main:latest
 # Copy files from directories
 # EXAMPLE - copies update-aurora.sh from the scripts directory and places it into the /tmp directory to be referenced later
 COPY scripts/update-cosmic.sh /tmp/update.sh
-COPY scripts/misc/kernel-install-bazzite.sh /tmp/kernel.sh
+COPY scripts/misc/cachy-kernel.sh /tmp/kernel.sh
 
 #Build Container image 
 RUN mkdir -p /var/lib/alternatives && \

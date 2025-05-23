@@ -11,13 +11,16 @@ set -ouex pipefail
 dnf5 -y update
 dnf5 -y upgrade
 
+#Bazzite needs minimal tweaks as it is slighly more bleeding-edge than the other images 
+
 # enable mesa-git copr repo
-dnf5 -y copr enable xxmitsu/mesa-git
+dn5 -y copr enable danayer/mesa-git
 dnf5 -y update 
 dnf5 -y upgrade 
-dnf5 -y copr disable xxmitsu/mesa-git
+dnf5 -y copr disable danayer/mesa-git
 
-#Install Gaming RPMs (Will soon be migrated into a script) (Bottles will be kept as a flatpak)
-cd /tmp
-wget https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.17.0/Heroic-2.17.0-linux-x86_64.rpm -O heroic.rpm
-dnf 5 -y install heroic.rpm 
+# enable vulkan-git copr repo
+dn5 -y copr enable danayer/vulkan-git
+dnf5 -y update 
+dnf5 -y upgrade 
+dnf5 -y copr disable danayer/vulkan-git

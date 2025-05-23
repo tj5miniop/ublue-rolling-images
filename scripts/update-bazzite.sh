@@ -19,5 +19,5 @@ dnf5 -y copr disable xxmitsu/mesa-git
 
 #Install Gaming RPMs (Will soon be migrated into a script) (Bottles will be kept as a flatpak)
 cd /tmp
-https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.16.1/Heroic-2.16.1-linux-x86_64.rpm -O heroic.rpm
+wget https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.16.1/Heroic-2.16.1-linux-x86_64.rpm -O heroic.rpm
 dnf 5 -y install heroic.rpm 

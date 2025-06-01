@@ -27,7 +27,7 @@ dnf5 -y copr enable danayer/libdrm-git
 
 
 # enable vulkan-git copr repo
-dn5 -y copr enable danayer/vulkan-git
+dnf5 -y copr enable danayer/vulkan-git
 dnf5 -y update 
 dnf5 -y upgrade 
 dnf5 -y copr disable danayer/vulkan-git

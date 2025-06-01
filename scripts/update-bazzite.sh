@@ -14,7 +14,7 @@ dnf5 -y upgrade
 #Bazzite needs minimal tweaks as it is slighly more bleeding-edge than the other images 
 
 # enable mesa-git copr repo
-dn5 -y copr enable danayer/mesa-git
+dnf5 -y copr enable danayer/mesa-git
 dnf5 -y update 
 dnf5 -y upgrade 
 dnf5 -y copr disable danayer/mesa-git
